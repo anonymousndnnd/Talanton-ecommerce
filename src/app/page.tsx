@@ -12,7 +12,7 @@ interface Product {
   inventory: string;
   slug: string;
 }
-
+//some changes done
 //  Server-side ISR fetching
 async function getProducts(): Promise<Product[]> {
   const baseUrl =
