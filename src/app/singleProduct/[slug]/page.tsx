@@ -9,6 +9,7 @@ interface Product {
   inventory: string;
   slug: string;
 }
+//solving build errors
 
 // Fetch product server-side (ISR)
 async function getProduct(slug: string): Promise<Product | null> {
