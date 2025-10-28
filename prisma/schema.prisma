@@ -6,6 +6,9 @@
 
 generator client {
   provider = "prisma-client-js"
+  // Use the binary engine on Vercel to ensure the query engine binary is produced
+  // (this avoids the library (.so.node) lookup issues on some deployments).
+  engineType = "binary"
   binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
