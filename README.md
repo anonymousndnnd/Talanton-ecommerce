@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🛍️ Project Overview – Working of the Application
 
-## Getting Started
+The FlipKart Admin Panel is a full-stack e-commerce management system that connects both users and administrators in one unified platform.
 
-First, run the development server:
+🧭 User Flow (Frontend)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Landing Page / Home Page:
+When a user visits the website, they are presented with a list of all available products fetched from the backend database.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Product Listing:
+Each product card displays essential information like name, category, price, and stock availability.
+Users can browse through all the products easily.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Wishlist (In Progress):
+Users can add items to their wishlist — this feature helps them save products they might want to purchase later.
+(Currently under development)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Product Details:
+Clicking on any product navigates the user to a detailed view page showing its full description, category, and inventory count.
 
-## Learn More
+🧑‍💼 Admin Flow (Backend Dashboard)
 
-To learn more about Next.js, take a look at the following resources:
+Admin Login Page:
+There’s a dedicated admin section that allows secure login using admin credentials.
+Only verified admins can access the dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Product Management:
+Once logged in, the admin can add, update, or delete products in the inventory.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Add Product: Add new product details such as name, price, category, description, and inventory count.
 
-## Deploy on Vercel
+Edit Product: Update or modify any product’s information (price, name, category, etc.).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Delete Product: Remove products that are no longer available in the store.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Inventory Synchronization:
+All admin actions are directly reflected in the MongoDB database.
+Changes are dynamically updated on the user-facing site through revalidation and incremental static regeneration.
