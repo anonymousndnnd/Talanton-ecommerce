@@ -13,7 +13,8 @@ if (!fs.existsSync(clientDir)) {
 const files = fs.readdirSync(clientDir);
 files.forEach(f => console.log(f));
 
-const hasEngine = files.some(f => /rhel-openssl-3\.0\.x|query-engine|libquery_engine|query_engine/.test(f));
+// Consider both native/query-engine artifacts and wasm artifacts as valid
+const hasEngine = files.some(f => /rhel-openssl-3\.0\.x|query-engine|libquery_engine|query_engine|wasm/.test(f));
 if (hasEngine) {
   console.log('PRISMA_ENGINE_PRESENT');
   process.exit(0);

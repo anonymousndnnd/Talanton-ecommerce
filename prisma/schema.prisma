@@ -6,11 +6,9 @@
 
 generator client {
   provider = "prisma-client-js"
-  // Use the binary engine on Vercel to ensure the query engine binary is produced
-  // (this avoids the library (.so.node) lookup issues on some deployments).
-  engineType = "binary"
-  // Keep the required binary targets (native + RHEL) — keep array on one line to avoid parser
-  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+  // Use the WASM engine to avoid shipping platform-specific query engine binaries.
+  // WASM is portable across deployment targets (suitable for serverless platforms).
+  engineType = "wasm"
 }
 
 datasource db {
