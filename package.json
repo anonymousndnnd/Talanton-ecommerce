@@ -23,10 +23,11 @@
     "lucide-react": "^0.548.0",
     "next": "16.0.0",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "@prisma/client": "^6.18.0"
   },
   "devDependencies": {
-    "@prisma/client": "^6.18.0",
+    
     "@prisma/nextjs-monorepo-workaround-plugin": "^6.18.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
