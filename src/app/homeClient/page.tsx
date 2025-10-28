@@ -11,7 +11,7 @@ interface Product {
   slug: string;
 }
 
-export default function HomeClient({ products }: { products: Product[] }) {
+export default function HomeClient({ products =[]}: { products?: Product[] }) {
   const [query, setQuery] = useState("");
 
   const filtered = products.filter(
@@ -35,7 +35,7 @@ export default function HomeClient({ products }: { products: Product[] }) {
         </p>
       </section>
 
-      {/* 🏠 Hero Section */}
+      {/*  Hero Section */}
       <section className="text-center py-16 sm:py-20 bg-gradient-to-r from-indigo-50 via-white to-blue-50 border-b border-gray-200">
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight">
           Welcome to <span className="text-indigo-600">TalantonCore Store</span>

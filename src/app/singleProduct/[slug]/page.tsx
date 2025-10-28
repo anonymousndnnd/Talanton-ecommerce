@@ -15,7 +15,7 @@ async function getProduct(slug: string): Promise<Product | null> {
   try {
     console.log("slug is:",slug)
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/products/${slug}`,
+      `$${process.env.NODE_ENV === "production" ? process.env.NEXT_PUBLIC_API_URL : ""}/api/products/${slug}`,
       { next: { revalidate: 60 } } // enables ISR
     );
 
