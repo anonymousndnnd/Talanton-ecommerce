@@ -13,6 +13,7 @@ interface Product {
   slug: string;
 }
 //some changes done
+//fixing connection issues
 //  Server-side ISR fetching
 async function getProducts(): Promise<Product[]> {
   const baseUrl =
