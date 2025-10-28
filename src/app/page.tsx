@@ -15,7 +15,11 @@ interface Product {
 
 //  Server-side ISR fetching
 async function getProducts(): Promise<Product[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/allProducts`, {
+  const baseUrl =
+      process.env.NODE_ENV === "production"
+        ? `https://${process.env.VERCEL_URL || process.env.NEXT_PUBLIC_API_URL}`
+        : "http://localhost:3000";
+  const res = await fetch(`${baseUrl}/api/allProducts`, {
     next: { revalidate: 60 },
   });
 
