@@ -8,7 +8,6 @@
   "scripts": {
     "dev": "next dev",
   "build": "next build",
-  "prebuild": "prisma generate && node ./scripts/check-prisma.js",
     "start": "next start",
     "lint": "eslint",
     "postinstall": "prisma generate"
